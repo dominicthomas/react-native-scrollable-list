@@ -1,11 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, ActivityIndicator } from 'react-native';
+import { StyleSheet, View, ActivityIndicator, Linking } from 'react-native';
 import { searchRecipes } from '../services/EdmamApi'
 import FullScreen from './FullScreen'
 import Search from './Search'
 import Recipes from './Recipes';
 import SnackBar from 'react-native-snackbar-component';
-import { Linking } from 'react-native';
 
 const ERROR_VISIBLE_TIMEOUT_MS = 2500;
 
