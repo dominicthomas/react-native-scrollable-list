@@ -5,6 +5,7 @@ import FullScreen from './FullScreen'
 import Search from './Search'
 import Recipes from './Recipes';
 import SnackBar from 'react-native-snackbar-component';
+import { Linking } from 'react-native';
 
 const ERROR_VISIBLE_TIMEOUT_MS = 2500;
 
@@ -78,7 +79,8 @@ export default class Home extends React.Component {
 
     onItemSelected(url) {
         const { navigate } = this.props.navigation;
-        navigate('Details', { url })
+        //navigate('Details', { url }) // TODO: Load url in a webview
+        Linking.openURL(url).catch((err) => console.error('An error occurred', err));
     }
 
     componentDidUpdate(prevProps, prevState) {
